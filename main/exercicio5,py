@@ -1,0 +1,25 @@
+import os
+
+def limpar_console():
+    os.system('cls' if os.name == 'nt' else 'clear')
+
+while True:
+    # Entrada do usuário
+    string = input("Digite uma string para inverter (deve ter mais de 1 caractere): ")
+    
+    # Verifica se a string possui mais de 1 caractere
+    if len(string) > 1:
+        break
+    else:
+        limpar_console()
+        print("Entrada inválida! A string deve ter mais de 1 caractere.")
+
+
+string_invertida = ""
+
+# Invertendo String
+for i in range(len(string) - 1, -1, -1):
+    string_invertida += string[i]
+
+
+print(f"String invertida: {string_invertida}")
